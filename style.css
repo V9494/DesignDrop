@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Playwrite+NZ:wght@100..400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5; /* Light background for Material UI feel */
+}
+
+/* style.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.loading-animation {
+    font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+  position: absolute;
+  top: 200px;
+  background: transparent;
+  filter: drop-shadow(0 5px 0px orange);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+/* Other existing styles */
+
+
+.container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    gap: 4rem;
+}
+
+.file_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.file-upload-container {
+    width: 127px;
+    padding: 16px;
+    background-color: #6200ea;
+    border: 1px solid #5a67d8;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.file-upload-container:hover {
+    background-color: #ececec;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all ease-in-out 0.3s;
+}
+
+.file-upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.upload-icon {
+    height: 40px;
+    width: 40px;
+    fill: white;
+    stroke: #5a67d8;
+}
+
+.upload-text {
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 3px;
+}
+
+.file-upload-input {
+    display: none;
+}
+
+#upload_designs {
+    position: absolute;
+    top: 39%;
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+#upload_shirts {
+    position: absolute;
+  top: 40%;
+  left: 54%;
+  transform: translateX(100%);
+  z-index: 2;
+  background-color: #ff5100;
+  border: none;
+  border: 1px solid #ff5100;
+}
+
+#upload_shirts .upload-icon{
+    height: 40px;
+    width: 40px;
+    fill: white;
+    stroke: #e25818ee;
+
+}
+#upload_shirts:hover{
+    background-color: #ececec;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all ease-in-out 0.3s;
+
+}
+
+#file_upload {
+    width: 20%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#file_upload input[type="file"] {
+    display: none;
+}
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #3f51b5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .download-button:hover {
+    background-color: #303f9f;
+    box-shadow: 0px 3px 3px -1px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+  }
+  
+  .download-button:active {
+    background-color: #283593;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  }
+  
+  .download-icon {
+    margin-right: 8px;
+    font-size: 18px;
+  }
+  
+.left, .right {
+    width: 50%;
+}
+
+.left .item {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.left .item .removeItem {
+    height: 12%;
+    width: 12%;
+    background: #ff3000;
+    position: absolute;
+    border-radius: 2rem;
+    color: white;
+    top: -2%;
+    left: 91%;
+    box-shadow: 0px 1px 3px #00000085;
+    cursor: pointer;
+}
+
+.left .item img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.left .item:hover {
+    background-color: #ececec;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mockup {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.removeShirt{
+    height: 4%;
+    width: 4%;
+    background: #ff3000;
+    position: absolute;
+    border-radius: 2rem;
+    color: white;
+    top: 0%;
+    left: 96%;
+    box-shadow: 0px 1px 3px #00000085;
+    cursor: pointer;
+    text-align: center;
+}
+
+.graphic {
+    width: 153px;
+    height: 145px;
+    background-color: transparent;
+    transition: 0.3s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.graphic.drag {
+    border: 3px dotted #6200ea;
+}
+
+.graphic img {
+    max-width: 100%;
+    max-height: 100%;
+    background: transparent;
+}
+/* Login Form Styles */
+
+.backgroundOverlay{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.503);
+    position: fixed;
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.4s;  /*Fade in effect*/
+}
+
+.backgroundOverlay .open{
+    opacity: 0;
+}
+
+/* Signup Form Styles */
+.signup-form {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 41px;
+    width: 319px;
+    position: relative;
+}
+
+#signupForm{
+    padding: 9px;
+  border-radius: 10px;
+}
+
+.signup-form .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    border-radius: 20px;
+    width: 25px;
+    text-align: center;
+}
+
+.signup-form h2 {
+    font-family: 'Lobster', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.signup-form .form-group {
+    margin-bottom: 15px;
+}
+
+.signup-form .form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #4a5568;
+    margin-bottom: 5px;
+}
+
+.signup-form .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.signup-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #3f51b5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.signup-button:hover {
+    background-color: #303f9f;
+}
+
+.signup-button:active {
+    background-color: #283593;
+}
+
+@media (max-width: 768px) {
+    .signup-form {
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .left, .right {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .mockup {
+        height: 400px;
+    }
+}
