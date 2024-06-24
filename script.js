@@ -1,4 +1,3 @@
-
 let itemSrc = null;
 const graphic = document.querySelector(".graphic");
 const leftDiv = document.querySelector(".left");
@@ -38,7 +37,29 @@ function dragEnd(event) {
     graphic.classList.remove("drag");
 }
 
+function touchStart(event) {
+    itemSrc = event.target.src;
+    graphic.classList.add("drag");
+}
+
+function touchEnd(event) {
+    graphic.classList.remove("drag");
+}
+
+function touchMove(event) {
+    event.preventDefault();
+    const touch = event.touches[0];
+    const img = document.createElement("img");
+    img.src = itemSrc;
+    graphic.innerHTML = "";
+    graphic.appendChild(img);
+    graphic.classList.remove("drag");
+}
+
 graphic.addEventListener("click", toggleBorder, true);
+graphic.addEventListener("touchstart", touchStart, true);
+graphic.addEventListener("touchend", touchEnd, true);
+graphic.addEventListener("touchmove", touchMove, true);
 
 function toggleBorder(e) {
     if (!isDottedBorder) {
@@ -101,6 +122,9 @@ fileInputDesigns.addEventListener("change", () => {
             removeItem.classList.add("removeItem");
             removeItem.innerText = "-";
             img.setAttribute("ondragstart", "drag(event)"); // Set drag attribute
+            img.setAttribute("ontouchstart", "touchStart(event)"); // Set touch attribute
+            img.setAttribute("ontouchend", "touchEnd(event)"); // Set touch attribute
+            img.setAttribute("ontouchmove", "touchMove(event)"); // Set touch attribute
             newItem.appendChild(img);
             newItem.appendChild(removeItem);
             leftDiv.appendChild(newItem);
@@ -108,8 +132,6 @@ fileInputDesigns.addEventListener("change", () => {
             // Add dragstart and dragend listeners to the new image
             img.addEventListener("dragstart", drag);
             img.addEventListener("dragend", dragEnd);
-            img.addEventListener('touchstart',drag);
-            img.addEventListener('touchend',dragEnd)
 
             // Add click event listener to the remove button
             removeItem.addEventListener("click", (event) => {
