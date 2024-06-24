@@ -108,6 +108,8 @@ fileInputDesigns.addEventListener("change", () => {
             // Add dragstart and dragend listeners to the new image
             img.addEventListener("dragstart", drag);
             img.addEventListener("dragend", dragEnd);
+            img.addEventListener('touchmove',drag);
+            img.addEventListener('touchend',dragEnd)
 
             // Add click event listener to the remove button
             removeItem.addEventListener("click", (event) => {
