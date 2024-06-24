@@ -40,6 +40,7 @@ function dragEnd(event) {
 function touchStart(event) {
     itemSrc = event.target.src;
     graphic.classList.add("drag");
+    event.preventDefault();
 }
 
 function touchEnd(event) {
